@@ -125,6 +125,7 @@
   --black-muted: hsl(0, 0%, 30%);
   --white: hsl(0, 0%, 95%);
   --gray: hsl(220, 9%, 46%);
+  --secondary: hsl(0, 0%, 80%);
 }
 
 body {
@@ -146,6 +147,15 @@ body {
 
 .btn-primary {
   background-color: var(--black);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
   color: var(--white);
   padding: 0.75rem 1.5rem;
   border: none;
@@ -236,6 +246,7 @@ body {
   /* text-align: justify; */
 }
 
+/* Desktop properties */
 @media (min-width: 640px) {
   .heading {
     font-size: 3rem;
@@ -264,6 +275,36 @@ body {
   .profile-image-wrapper {
     border-radius: 16px;
   }
+
+  .content-block {
+    flex-direction: row !important; 
+    align-items: center;
+    justify-content: space-between;
+    text-align: left !important;
+  }
+
+  .content-block.reverse {
+    flex-direction: row-reverse;
+    text-align: right !important;
+  }
+
+  .content-block.reverse .button-group {
+    justify-content: flex-end !important;
+  }
+
+  .content-block .text {
+    flex: 1;
+  }
+
+  .content-block .placeholder-image {
+    flex: 1;
+    min-width: 300px;   /* ✅ prevent collapsing */
+    height: 280px;      /* desktop height */
+  }
+
+  .button-group {
+    justify-content: flex-start !important;
+  }
 }
 
 .description {
@@ -285,6 +326,7 @@ body {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .profile {
@@ -403,3 +445,29 @@ footer .container {
   display: flex;
   justify-content: space-between;
 }
+
+.placeholder-image {
+  background-color: gray;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 220px;
+  border-radius: 8px;
+}
+
+.content-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  text-align: center;   /* center text on mobile */
+}
+
+.content-block.reverse {
+  flex-direction: column-reverse;
+}
+
+.content-block .text {
+  flex: 1;
+}
+
