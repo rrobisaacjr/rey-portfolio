@@ -1,5 +1,6 @@
 // src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
 import Layout from "./Layout";
 import HomePage from "./HomePage";
 
@@ -11,6 +12,7 @@ import ContactPage from "./pages/ContactPage";
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
