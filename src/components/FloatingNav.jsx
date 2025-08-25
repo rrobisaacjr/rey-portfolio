@@ -1,5 +1,5 @@
-// src/components/FloatingNav.jsx
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import TransitionLink from "./TransitionLink";
 
 export default function FloatingNav() {
   const location = useLocation();
@@ -13,30 +13,34 @@ export default function FloatingNav() {
         <span>Rey Isaac Jr.</span>
       </div>
       <div className="divider" aria-hidden="true"></div>
-      <Link to="/" className="nav-item">
+
+      <TransitionLink to="/" className="nav-item">
         <span className={`material-symbols-rounded ${isActive("/") ? "active" : ""}`}>
           home
         </span>
         {isActive("/") && <span className="nav-label">Home</span>}
-      </Link>
-      <Link to="/about" className="nav-item">
+      </TransitionLink>
+
+      <TransitionLink to="/about" className="nav-item">
         <span className={`material-symbols-rounded ${isActive("/about") ? "active" : ""}`}>
           account_circle
         </span>
         {isActive("/about") && <span className="nav-label">About</span>}
-      </Link>
-      <Link to="/projects" className="nav-item">
+      </TransitionLink>
+
+      <TransitionLink to="/projects" className="nav-item">
         <span className={`material-symbols-rounded ${isActive("/projects") ? "active" : ""}`}>
           folder
         </span>
         {isActive("/projects") && <span className="nav-label">Projects</span>}
-      </Link>
-      <Link to="/contact" className="nav-item">
+      </TransitionLink>
+
+      <TransitionLink to="/contact" className="nav-item">
         <span className={`material-symbols-rounded ${isActive("/contact") ? "active" : ""}`}>
           mail
         </span>
         {isActive("/contact") && <span className="nav-label">Contact</span>}
-      </Link>
+      </TransitionLink>
     </nav>
   );
 }

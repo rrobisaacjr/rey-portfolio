@@ -513,3 +513,18 @@ footer .container {
   flex: 1;
 }
 
+#page-wrapper {
+  min-height: 100vh; /* fill the viewport */
+  width: 100%;
+  background: white; /* default background */
+  transition-property: opacity, transform, filter, background;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
+
+#page-wrapper.page-transition {
+  opacity: 0;
+  background: black; /* show black during transition */
+  transform: translateY(0px);
+  filter: blur(12px);
+}
